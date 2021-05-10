@@ -9,38 +9,67 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import com.pocket.services.UserService;
 
 public class LoginController {
     @FXML
-    private Text registrationMessage;
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private ImageView logo;
-
-
+    private ChoiceBox role;
 
     @FXML
-    public void handleLoginAction() {
+    private Button next;
 
+    @FXML
+    public void initialize() {
+        role.getItems().addAll("Client", "Nutritionist");
     }
-    @FXML
-    public void handleRegisterAction()
+
+    public void loadMenu() throws Exception
     {
-        try{
+        Stage stage;
+        Parent root;
 
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
-            Stage registerStage = new Stage();
-            registerStage.setScene(new Scene(root, 600, 400));
-            registerStage.setTitle("Pocket Nutritionist - Register");
-            registerStage.show();
+        if((String) role.getValue() == "Client") {
+            //UserService.loadUsersFromFile();
 
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
+            stage = (Stage) next.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("ClientRegistration.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
         }
 
+        if((String) role.getValue() == "Nutritionist") {
+           // UserService.loadUsersFromFile();
+
+            //Stage primaryStage = new Stage();
+            stage = (Stage) next.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("NutritionistRegistration.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        /*
+        if((String) role.getValue() == "Client") {
+            UserService.loadUsersFromFile();
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ClientRegistration.fxml"));
+            primaryStage.setTitle("Registration Example");
+            primaryStage.setScene(new Scene(root, 300, 275));
+            primaryStage.show();
+        }
+        if((String) role.getValue() == "Nutritionist") {
+            UserService.loadUsersFromFile();
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("NutritionistRegistration.fxml"));
+            primaryStage.setTitle("Registration Example");
+            primaryStage.setScene(new Scene(root, 300, 325));
+            primaryStage.show();
+        }
+        */
+
     }
+
 }
