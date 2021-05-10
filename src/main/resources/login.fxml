@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" prefHeight="900" prefWidth="1100"
+          vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal"
+          fx:controller="com.pocket.controllers.LoginController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+    </padding>
+    <ImageView fitHeight="150" fitWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <image>
+
+            <Image url="@logo.png"/>
+        </image>
+    </ImageView>
+    <Text id="title-text" text="Pocket Nutritionist - Login" GridPane.columnIndex="1" GridPane.columnSpan="2"
+          GridPane.rowIndex="0"/>
+
+    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="5">
+        <Button onAction="#handleRegisterAction" text="Register"/>
+    </HBox>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button onAction="#handleLoginAction" text="Login"/>
+    </HBox>
+</GridPane>
