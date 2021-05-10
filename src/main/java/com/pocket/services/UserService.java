@@ -26,7 +26,7 @@ import static org.apache.commons.io.FilenameUtils.getExtension;
 public class UserService {
 
     private static List<User> users ;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
+    private static final Path USERS_PATH = FileSystemService.getPathToFile( "users.json");
 
     public static void loadUsersFromFile() throws IOException {
 
@@ -98,6 +98,12 @@ public class UserService {
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+        try{
+            loadUsersFromFile();
+        }catch (IOException e){
+            e.printStackTrace();
+            e.getCause();
+        }
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
@@ -106,6 +112,7 @@ public class UserService {
 
     private static void checkPhoneNumberIsValid(String phone) throws InvalidPhoneNumberException {
         //boolean isValid = true;
+
         for(int i=0;i<phone.length();i++)
         {
             char c = phone.charAt(i);
