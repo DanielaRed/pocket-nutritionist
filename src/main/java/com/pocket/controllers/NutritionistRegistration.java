@@ -1,6 +1,10 @@
 package com.pocket.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.Scene;
 import javafx.stage.FileChooser;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
@@ -9,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import com.pocket.services.UserService;
 import com.pocket.exceptions.*;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +35,8 @@ public class NutritionistRegistration {
     private TextField PhoneNumber;
     @FXML
     private TextField Email;
+    @FXML
+    private Button back;
 
     private String Document;
 
@@ -89,6 +96,25 @@ public class NutritionistRegistration {
             registrationMessage.setText(e.getMessage());
         }
 
+
+    }
+    @FXML
+    public void handleBackButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) back.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("SelectRole.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
 }

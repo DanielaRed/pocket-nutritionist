@@ -1,6 +1,10 @@
 package com.pocket.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -11,6 +15,7 @@ import com.pocket.exceptions.InvalidEmailException;
 import com.pocket.exceptions.InvalidPhoneNumberException;
 import com.pocket.exceptions.UsernameAlreadyExistsException;
 import com.pocket.services.UserService;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
@@ -28,6 +33,8 @@ public class ClientRegistration {
     private TextField PhoneNumber;
     @FXML
     private TextField Email;
+    @FXML
+    private Button back;
 
 
 
@@ -58,6 +65,25 @@ public class ClientRegistration {
             registrationMessage.setText(e.getMessage());
         }
 
+
+    }
+    @FXML
+    public void handleBackButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) back.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("SelectRole.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
 }

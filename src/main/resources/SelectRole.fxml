@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" prefHeight="400" prefWidth="600"
           vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal"
-          fx:controller="com.pocket.controllers.LoginController">
+          fx:controller="com.pocket.controllers.SelectRoleController">
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
     </padding>
@@ -34,5 +34,9 @@
     <Text fx:id="Next" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
         <Button fx:id="next" onAction="#loadMenu" text="Next"/>
+    </HBox>
+    <Text fx:id="Back" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="5">
+        <Button fx:id="back" onAction="#handleBackButton" text="Back"/>
     </HBox>
 </GridPane>
