@@ -34,6 +34,12 @@ public class ClientRegistration {
     @FXML
     private TextField Email;
     @FXML
+    private TextField FullName;
+    @FXML
+    private TextField Gender;
+    @FXML
+    private TextField Height;
+    @FXML
     private Button back;
 
 
@@ -50,7 +56,7 @@ public class ClientRegistration {
         try {
             LocalDate date = DateOfBirth.getValue();
 
-            UserService.addUser(usernameField.getText(), passwordField.getText(), "Client", date, PhoneNumber.getText(),Email.getText(), true);
+            UserService.addClientUser(usernameField.getText(), passwordField.getText(), "Client", date, PhoneNumber.getText(),Email.getText(), true);
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());

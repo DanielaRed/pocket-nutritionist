@@ -51,22 +51,33 @@ public class UserService {
         return users;
     }
 
-    public static void addUser(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, Boolean verified) throws EmptyEntryException, UsernameAlreadyExistsException, InvalidPhoneNumberException, InvalidEmailException {
-        checkEmptyEntry(username, DateOfBirth, PhoneNumber, Email);
+    public static void addClientUser(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, String FullName, String Gender, String Allergies, String Height, String Weight, String DietType,Boolean verified) throws EmptyEntryException, UsernameAlreadyExistsException, InvalidPhoneNumberException, InvalidEmailException {
+        checkEmptyEntry(username, DateOfBirth, PhoneNumber, Email , FullName);
+        //checkClientDetails(Allergies, Height, Weight );
         checkUserDoesNotAlreadyExist(username);
         checkPhoneNumberIsValid(PhoneNumber);
+        try {
+            checkHeightIsValid(Height);
+        } catch (InvalidHeightException e) {
+            e.printStackTrace();
+        }
+        try {
+            checkWeightIsValid(Weight);
+        } catch (InvalidWeightException e) {
+            e.printStackTrace();
+        }
         checkEmailIsValid(Email);
-        users.add(new User(username, encodePassword(username, password), role, DateOfBirth, PhoneNumber, Email, verified));
+        users.add(new User(username, encodePassword(username, password), role, DateOfBirth, PhoneNumber, Email, FullName, Gender, Allergies, Height, Weight, DietType, verified));
         persistUsers();
     }
 
-    public static void addUser(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, Boolean verified, String path) throws EmptyEntryException, UsernameAlreadyExistsException, InvalidPhoneNumberException, InvalidEmailException, IOException, NoFileSelectedException {
-        checkEmptyEntry(username, DateOfBirth, PhoneNumber, Email);
+    public static void addNutritionistUser(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, String FullName, Boolean verified, String path) throws EmptyEntryException, UsernameAlreadyExistsException, InvalidPhoneNumberException, InvalidEmailException, IOException, NoFileSelectedException {
+        checkEmptyEntry(username, DateOfBirth, PhoneNumber, Email, FullName);
         checkUserDoesNotAlreadyExist(username);
         checkPhoneNumberIsValid(PhoneNumber);
         checkEmailIsValid(Email);
         checkFilePath(path);
-        users.add(new User(username, encodePassword(username, password), role, DateOfBirth, PhoneNumber, Email, verified));
+        users.add(new User(username, encodePassword(username, password), role, DateOfBirth, PhoneNumber, Email, FullName, verified));
         copyImage(path,username);
         persistUsers();
     }
@@ -88,8 +99,8 @@ public class UserService {
 
 
 
-    private static void checkEmptyEntry(String username, LocalDate DateOfBirth, String PhoneNumber, String Email) throws EmptyEntryException {
-        if (username.compareTo("")==0 || DateOfBirth == null || PhoneNumber.compareTo("")==0 || Email.compareTo("")==0)
+    private static void checkEmptyEntry(String username, LocalDate DateOfBirth, String PhoneNumber, String Email, String FullName) throws EmptyEntryException {
+        if (username.compareTo("")==0 || DateOfBirth == null || PhoneNumber.compareTo("")==0 || Email.compareTo("")==0 || FullName.compareTo("")==0)
         {
             throw new EmptyEntryException();
         }
@@ -128,6 +139,30 @@ public class UserService {
             if(Character.isDigit(c)==false)
             {
                 throw new InvalidPhoneNumberException();
+            }
+        }
+
+
+    }
+    private static void checkHeightIsValid(String height) throws InvalidHeightException {
+
+        for(int i=0;i<height.length();i++)
+        {
+            char c = height.charAt(i);
+            if(Character.isDigit(c)==false)
+            {
+                throw new InvalidHeightException();
+            }
+        }
+    }
+    private static void checkWeightIsValid(String weight) throws InvalidWeightException {
+
+        for(int i=0;i<weight.length();i++)
+        {
+            char c = weight.charAt(i);
+            if(Character.isDigit(c)==false)
+            {
+                throw new InvalidWeightException();
             }
         }
     }

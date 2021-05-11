@@ -75,7 +75,7 @@ public class NutritionistRegistration {
         try {
             LocalDate date = DateOfBirth.getValue();
 
-            UserService.addUser(usernameField.getText(), passwordField.getText(), "Nutritionist", date, PhoneNumber.getText(),Email.getText(), false, Document);
+            UserService.addNutritionistUser(usernameField.getText(), passwordField.getText(), "Nutritionist", date, PhoneNumber.getText(),Email.getText(), false, Document);
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
