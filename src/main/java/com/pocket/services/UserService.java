@@ -37,9 +37,18 @@ public class UserService {
         ObjectMapper objectMapper = new ObjectMapper();
         users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
         });
+    }
 
+    public static List<User> loadUsersFromFile2() throws IOException {
 
+        if (!Files.exists(USERS_PATH)) {
+            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
+        }
 
+        ObjectMapper objectMapper = new ObjectMapper();
+        users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
+        });
+        return users;
     }
 
     public static void addUser(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, Boolean verified) throws EmptyEntryException, UsernameAlreadyExistsException, InvalidPhoneNumberException, InvalidEmailException {
@@ -146,6 +155,11 @@ public class UserService {
         } catch (IOException e) {
             throw new CouldNotWriteUsersException();
         }
+    }
+
+    public static String loginEncode(String salt, String password)
+    {
+        return encodePassword(salt,password);
     }
 
     private static String encodePassword(String salt, String password) {

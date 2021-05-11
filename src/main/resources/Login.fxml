@@ -34,6 +34,6 @@
         <Button fx:id="Register" onAction="#handleRegisterAction" text="Register"/>
     </HBox>
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button fx:id="Login" text="Login"/>
+        <Button fx:id="Login" onAction="#handleLoginAction" text="Login"/>
     </HBox>
 </GridPane>
