@@ -25,28 +25,54 @@
 
     <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-    <Label text="Date of Birth:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
 
-    <DatePicker fx:id="DateOfBirth" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <TextField fx:id="FullName" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-    <Label text="Phone Number:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Label text="Date of Birth:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
 
-    <TextField fx:id="PhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <DatePicker fx:id="DateOfBirth" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
-    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <Label text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
 
-    <TextField fx:id="Email" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <ChoiceBox fx:id="Gender" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+    </ChoiceBox>
+
+    <Label text="Diet Type:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+
+    <ChoiceBox fx:id="DietType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+    </ChoiceBox>
+
+    <Label text="Height:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <TextField fx:id="Height" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <Label text="cm" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+
+    <Label text="Weight:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+    <TextField fx:id="Weight" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+    <Label text="kg" GridPane.columnIndex="2" GridPane.rowIndex="8"/>
+
+    <Label text="Allergies" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+
+    <TextField fx:id="Allergies" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+    <Label text="Phone Number:" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+
+    <TextField fx:id="PhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="11"/>
+
+    <TextField fx:id="Email" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
 
 
 
 
 
-    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
+    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="12">
         <Button onAction="#handleRegisterAction" text="Register"/>
     </HBox>
     <Text fx:id="Back" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="6">
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="12">
         <Button fx:id="back" onAction="#handleBackButton" text="Back"/>
     </HBox>
 </GridPane>

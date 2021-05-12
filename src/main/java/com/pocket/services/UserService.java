@@ -53,8 +53,8 @@ public class UserService {
 
     public static void addClientUser(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, String FullName, String Gender, String Allergies, String Height, String Weight, String DietType,Boolean verified) throws EmptyEntryException, UsernameAlreadyExistsException, InvalidPhoneNumberException, InvalidEmailException {
         checkEmptyEntry(username, DateOfBirth, PhoneNumber, Email , FullName);
-        //checkClientDetails(Allergies, Height, Weight );
         checkUserDoesNotAlreadyExist(username);
+        checkAllergies(Allergies);
         checkPhoneNumberIsValid(PhoneNumber);
         try {
             checkHeightIsValid(Height);
@@ -115,6 +115,13 @@ public class UserService {
         }
         if(usernameValid == false)
             throw new EmptyEntryException();
+    }
+    private static void checkAllergies(String Allergies) throws EmptyEntryException{
+        if(Allergies.compareTo("")==0)
+        {
+            throw new EmptyEntryException();
+        }
+
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
