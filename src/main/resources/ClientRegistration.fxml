@@ -51,7 +51,7 @@
     <TextField fx:id="Weight" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
     <Label text="kg" GridPane.columnIndex="2" GridPane.rowIndex="8"/>
 
-    <Label text="Allergies" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+    <Label text="Allergies:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
 
     <TextField fx:id="Allergies" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
 
