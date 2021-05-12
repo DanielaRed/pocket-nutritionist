@@ -61,7 +61,7 @@ public class ClientRegistration {
         try {
             LocalDate date = DateOfBirth.getValue();
 
-            UserService.addClientUser(usernameField.getText(), passwordField.getText(), "Client", date, PhoneNumber.getText(),Email.getText(),FullName.getText(),Gender.getTypeSelector(),Allergies.getText(),Height.getText(),Weight.getText(),DietType.getTypeSelector(),true);
+            UserService.addClientUser(usernameField.getText(), passwordField.getText(), "Client", date, PhoneNumber.getText(),Email.getText(),FullName.getText(),Gender.getValue().toString(),Allergies.getText(),Height.getText(),Weight.getText(),DietType.getValue().toString(),true);
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
