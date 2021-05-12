@@ -12,25 +12,9 @@
   "weight" : null,
   "allergies" : null,
   "fullName" : null,
-  "dietType" : null,
-  "verifiedStatus" : null
-}, {
-  "username" : "client",
-  "password" : "��?����\u0013޺\u001A��J�ˈ��\u00133��P��9�@o�CϋeW�hu�(�s�+\uD894\uDE94��wM�\u0003�8\u0015m,��",
-  "role" : "Client",
-  "phoneNumber" : "123",
-  "email" : "client@yahoo.com",
-  "year" : 2021,
-  "month" : 4,
-  "day" : 28,
-  "gender" : null,
-  "height" : null,
-  "weight" : null,
-  "allergies" : null,
-  "fullName" : null,
-  "dietType" : null,
-  "verifiedStatus" : true
-}, {
+  "verifiedStatus" : null,
+  "dietType" : null
+},  {
   "username" : "Doctor",
   "password" : "aY�-ludCu Z#�\u0013g��\u0006GhO}�-|g�\u00116��\u001Bz0\u0015�s+,�\u0016%\\Y\u00045[!\u001Dy1��Ob�\u0004�Fh�",
   "role" : "Nutritionist",
@@ -44,6 +28,22 @@
   "weight" : null,
   "allergies" : null,
   "fullName" : "Samantha Jones",
-  "dietType" : null,
-  "verifiedStatus" : false
+  "verifiedStatus" : false,
+  "dietType" : null
+}, {
+  "username" : "bbb",
+  "password" : "[\u001Eo��\rh\b�v����O\u001B3��ɕ\u0014[��7ץ�\u0001h�\u000F=�$��\u0001�X�\u0011m�F+@&�r����oF�94Lbx",
+  "role" : "Client",
+  "phoneNumber" : "123",
+  "email" : "bbb@",
+  "year" : 2021,
+  "month" : 4,
+  "day" : 27,
+  "gender" : "Female",
+  "height" : "165",
+  "weight" : "54",
+  "allergies" : "nuts",
+  "fullName" : "bbbb",
+  "verifiedStatus" : true,
+  "dietType" : "Muscle-Gain"
 } ]
