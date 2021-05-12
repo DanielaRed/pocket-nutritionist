@@ -14,6 +14,12 @@ public class User {
     private int year;
     private int month;
     private int day;
+    private String gender;
+    private String full_name;
+    private String height;
+    private String weight;
+    private String allergies;
+    private String diet_type;
     /*
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
@@ -25,20 +31,47 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, Boolean verified) {
+    public User(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email,
+                 String FullName, String Gender, String Allergies, String Height, String Weight,  String DietType, Boolean verified) {
+
         this.username = username;
         this.password = password;
         this.role = role;
-        //this.dateofbirth = DateOfBirth.toString();
+
         this.phoneNumber = PhoneNumber;
         this.email = Email;
         this.verified = verified;
+
+        this.gender = Gender;
+        this.full_name = FullName;
+        this.height = Height;
+        this.weight = Weight;
+        this.allergies = Allergies;
+        this.diet_type = DietType;
 
         this.year = DateOfBirth.getYear();
         this.month = DateOfBirth.getMonthValue();
         this.day = DateOfBirth.getDayOfMonth();
         //System.out.println(this.username+ " " + this.password + " " + this.role + " " + day + " " + month + " " + year + " " + " " + phoneNumber + " " + email + " " + this.verified);
+
+
     }
+
+    public User(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email, String FullName, Boolean verified) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+
+        this.phoneNumber = PhoneNumber;
+        this.email = Email;
+        this.verified = verified;
+        this.full_name = FullName;
+
+        this.year = DateOfBirth.getYear();
+        this.month = DateOfBirth.getMonthValue();
+        this.day = DateOfBirth.getDayOfMonth();
+    }
+
 
     public String getUsername() {
         return username;
@@ -110,6 +143,54 @@ public class User {
         this.phoneNumber = PhoneNumber;
     }
 
+    public String getGender(){
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getFullName(){
+        return full_name;
+    }
+
+    public void setFullName(String full_name) {
+        this.full_name = full_name;
+    }
+
+    public String getHeight(){
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight(){
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getAllergies(){
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
+
+    public String getDietType(){
+        return diet_type;
+    }
+
+    public void setDietType(String diet_type) {
+        this.diet_type = diet_type;
+    }
+
     public Boolean getVerifiedStatus() {
         return verified;
     }
@@ -149,7 +230,14 @@ public class User {
                 ", year='" + year +'\'' +
                 ", phoneNumber='" + phoneNumber +'\'' +
                 ", email='" + email + '\'' +
+                ", gender='" + gender +'\''+
+                ", full_name='" + full_name +'\''+
+                ", height='" + height +'\''+
+                ", weight='" + weight +'\''+
+                ", allergies='" + allergies +'\''+
+                ", diet_type='" + diet_type +'\''+
                 ", verified='" + verified + '\'' +
                 '}';
     }
 }
+

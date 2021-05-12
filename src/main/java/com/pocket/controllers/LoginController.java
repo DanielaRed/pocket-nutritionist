@@ -41,6 +41,7 @@ public class LoginController {
             {
                 userFound = true;
                 registrationMessage.setText("Login successful!");
+                handleLoginButton();
                 break;
             }
         }
@@ -68,5 +69,23 @@ public class LoginController {
             e.getCause();
         }
 
+    }
+
+    public void handleLoginButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) Register.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("ClientProfile.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }

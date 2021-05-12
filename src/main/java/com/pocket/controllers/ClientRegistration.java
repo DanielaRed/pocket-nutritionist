@@ -1,5 +1,6 @@
 package com.pocket.controllers;
 
+import com.pocket.exceptions.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,12 +11,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-import com.pocket.exceptions.EmptyEntryException;
-import com.pocket.exceptions.InvalidEmailException;
-import com.pocket.exceptions.InvalidPhoneNumberException;
-import com.pocket.exceptions.UsernameAlreadyExistsException;
 import com.pocket.services.UserService;
 import javafx.stage.Stage;
+import javafx.scene.control.ChoiceBox;
 
 import java.time.LocalDate;
 
@@ -34,8 +32,19 @@ public class ClientRegistration {
     @FXML
     private TextField Email;
     @FXML
+    private TextField FullName;
+    @FXML
+    private ChoiceBox Gender;
+    @FXML
+    private TextField Height;
+    @FXML
+    private TextField Weight;
+    @FXML
+    private TextField Allergies;
+    @FXML
+    private  ChoiceBox DietType;
+    @FXML
     private Button back;
-
 
 
     @FXML
@@ -43,6 +52,8 @@ public class ClientRegistration {
 
         DatePicker DateOfBirth = new DatePicker();
         HBox hbox = new HBox(DateOfBirth);
+        Gender.getItems().addAll("Female", "Male","Other");
+        DietType.getItems().addAll("Normal", "Muscle-Gain","Restricted");
     }
 
     @FXML
@@ -50,12 +61,11 @@ public class ClientRegistration {
         try {
             LocalDate date = DateOfBirth.getValue();
 
-            UserService.addUser(usernameField.getText(), passwordField.getText(), "Client", date, PhoneNumber.getText(),Email.getText(), true);
+            UserService.addClientUser(usernameField.getText(), passwordField.getText(), "Client", date, PhoneNumber.getText(),Email.getText(),FullName.getText(),Gender.getTypeSelector(),Allergies.getText(),Height.getText(),Weight.getText(),DietType.getTypeSelector(),true);
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
-        }
-        catch (InvalidPhoneNumberException e) {
+        } catch (InvalidPhoneNumberException e) {
             registrationMessage.setText(e.getMessage());
         }
         catch (InvalidEmailException e) {

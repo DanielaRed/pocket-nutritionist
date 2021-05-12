@@ -5,5 +5,4 @@ public class InvalidPhoneNumberException extends Exception {
         super(String.format("The phone number must contain only digits!"));
 
     }
-
 }

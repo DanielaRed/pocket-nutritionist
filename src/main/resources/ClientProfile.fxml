@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.pocket.controllers.ClientProfile"
+            prefHeight="400.0" prefWidth="600.0">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+    </padding>
+    <ImageView fitHeight="225" fitWidth="225" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.rowSpan="1">
+        <image>
+
+            <Image url="@logo.png"/>
+        </image>
+    </ImageView>
+    <Text id="title-text" fill="#b6c633" text="Select your role" GridPane.columnIndex="0" GridPane.columnSpan="1"
+          GridPane.rowIndex="1">
+        <font>
+            <Font name="Showcard Gothic" size="24.0" />
+        </font>
+
+    </Text>
+
+
+
+
+    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    </ChoiceBox>
+
+    <Text fx:id="Next" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button fx:id="next" onAction="#loadMenu" text="Next"/>
+    </HBox>
+</GridPane>
