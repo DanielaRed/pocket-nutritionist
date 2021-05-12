@@ -41,7 +41,7 @@ public class LoginController {
             {
                 userFound = true;
                 registrationMessage.setText("Login successful!");
-                handleLoginButton();
+                //handleLoginButton();
                 break;
             }
         }

@@ -1,6 +1,7 @@
 package com.pocket.model;
 
 import java.time.LocalDate;
+import java.time.Year;
 
 public class User {
 
@@ -14,6 +15,7 @@ public class User {
     private int year;
     private int month;
     private int day;
+    private int calories;
     private String gender;
     private String full_name;
     private String height;
@@ -53,6 +55,22 @@ public class User {
         this.month = DateOfBirth.getMonthValue();
         this.day = DateOfBirth.getDayOfMonth();
         //System.out.println(this.username+ " " + this.password + " " + this.role + " " + day + " " + month + " " + year + " " + " " + phoneNumber + " " + email + " " + this.verified);
+
+        if(this.gender.compareTo("Female")==0)
+        {
+            this.calories = (int)((447.6 + 9.25 * Integer.parseInt(this.weight)) + (3.1 * Integer.parseInt(this.height)) - (4.33d * (Year.now().getValue() - this.year)));
+        }
+
+        if(this.gender.compareTo("Male")==0)
+        {
+            this.calories = (int)((88.4 + 13.4 * Integer.parseInt(this.weight)) + (4.8 * Integer.parseInt(this.height)) - (5.68 * (Year.now().getValue() - this.year)));
+        }
+
+        if(this.diet_type.compareTo("Muscle-Gain")==0)
+        {
+            this.calories = (int)(this.calories * 1.55);
+        }
+
 
 
     }
@@ -100,6 +118,16 @@ public class User {
     public int getDay()
     {
         return day;
+    }
+
+    public int getCalories()
+    {
+        return calories;
+    }
+
+    public void setCalories(int calories)
+    {
+        this.calories=calories;
     }
 
     public void setDay(int day)

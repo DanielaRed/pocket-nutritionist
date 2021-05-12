@@ -52,7 +52,7 @@ public class ClientRegistration {
 
         DatePicker DateOfBirth = new DatePicker();
         HBox hbox = new HBox(DateOfBirth);
-        Gender.getItems().addAll("Female", "Male","Other");
+        Gender.getItems().addAll("Female", "Male");
         DietType.getItems().addAll("Normal", "Muscle-Gain","Restricted");
     }
 
