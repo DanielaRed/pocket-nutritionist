@@ -12,8 +12,8 @@
   "weight" : null,
   "allergies" : null,
   "fullName" : null,
-  "dietType" : null,
-  "verifiedStatus" : null
+  "verifiedStatus" : null,
+  "dietType" : null
 }, {
   "username" : "client",
   "password" : "��?����\u0013޺\u001A��J�ˈ��\u00133��P��9�@o�CϋeW�hu�(�s�+\uD894\uDE94��wM�\u0003�8\u0015m,��",
@@ -28,8 +28,8 @@
   "weight" : null,
   "allergies" : null,
   "fullName" : null,
-  "dietType" : null,
-  "verifiedStatus" : true
+  "verifiedStatus" : true,
+  "dietType" : null
 }, {
   "username" : "Doctor",
   "password" : "aY�-ludCu Z#�\u0013g��\u0006GhO}�-|g�\u00116��\u001Bz0\u0015�s+,�\u0016%\\Y\u00045[!\u001Dy1��Ob�\u0004�Fh�",
@@ -44,6 +44,22 @@
   "weight" : null,
   "allergies" : null,
   "fullName" : "Samantha Jones",
-  "dietType" : null,
-  "verifiedStatus" : false
+  "verifiedStatus" : false,
+  "dietType" : null
+}, {
+  "username" : "client1",
+  "password" : "4�3#嚽=>'6d\u0005���\u001Ct\u0012�wZK\u0005BVI�6M Ӕh�\u0004#I-{\u0015���v�o��ą%�x��|~�\u0007��",
+  "role" : "Client",
+  "phoneNumber" : "123",
+  "email" : "client1@",
+  "year" : 2021,
+  "month" : 4,
+  "day" : 26,
+  "gender" : "ChoiceBox",
+  "height" : "181",
+  "weight" : "75",
+  "allergies" : "peanuts, gluten",
+  "fullName" : "Sam Smith",
+  "verifiedStatus" : true,
+  "dietType" : "ChoiceBox"
 } ]
