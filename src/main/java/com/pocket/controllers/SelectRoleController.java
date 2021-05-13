@@ -65,7 +65,7 @@ public class SelectRoleController {
         try{
 
             stage = (Stage) back.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
