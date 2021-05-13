@@ -18,7 +18,7 @@ public class Main extends Application {
 
         //UserService.loadUsersFromFile();
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
         primaryStage.setTitle("Pocket Nutritionist");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
