@@ -97,9 +97,9 @@ public class LoginController {
         try{
         stage = (Stage) Close.getScene().getWindow();
         stage.close();
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
+        } catch(Exception o) {
+            o.printStackTrace();
+            o.getCause();
         }
     }
 }
