@@ -1,5 +1,6 @@
 package com.pocket.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,7 +19,8 @@ public class ClientProfile {
     private Button next;
     @FXML
     private Button back;
-
+    @FXML
+    private Button Close;
 
     @FXML
     public void initialize() {
@@ -52,6 +54,15 @@ public class ClientProfile {
             stage.show();
         }
 
+
+    }
+    @FXML
+    public void handleCloseAction(ActionEvent event)
+    {
+        Stage stage;
+
+        stage = (Stage) Close.getScene().getWindow();
+        stage.close();
 
     }
 
