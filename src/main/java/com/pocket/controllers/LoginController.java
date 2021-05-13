@@ -1,6 +1,7 @@
 package com.pocket.controllers;
 
 import com.pocket.model.User;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,6 +30,8 @@ public class LoginController {
     private Button Register;
     @FXML
     private Button Login;
+    @FXML
+    private Button Close;
     @FXML
 
     public void handleLoginAction() throws IOException {
@@ -70,14 +73,14 @@ public class LoginController {
         }
 
     }
-
+    @FXML
     public void handleLoginButton()
     {
         Stage stage;
         Parent root;
         try{
 
-            stage = (Stage) Register.getScene().getWindow();
+            stage = (Stage) Login.getScene().getWindow();
             root = FXMLLoader.load(getClass().getClassLoader().getResource("ClientProfile.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -87,5 +90,14 @@ public class LoginController {
             e.printStackTrace();
             e.getCause();
         }
+    }
+    @FXML
+    public void handleCloseAction(ActionEvent event)
+    {
+        Stage stage;
+
+        stage = (Stage) Close.getScene().getWindow();
+        stage.close();
+
     }
 }
