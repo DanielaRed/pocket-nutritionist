@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.PasswordField?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pocket.controllers.NutritionistRegistration">
+   <top>
+      <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="35.0" fitWidth="600.0" nodeOrientation="INHERIT" pickOnBounds="true">
+                  <Image url="@Pocket-Nutri-Background-01.jpg" />
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="4.0" prefHeight="27.0" prefWidth="144.0" text="Pocket Nutritionist" textFill="#4a4949">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Label>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="35.0" fitWidth="600.0" nodeOrientation="INHERIT" pickOnBounds="true">
+                  <Image url="@Pocket-Nutri-Background-01.jpg" />
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="9.0" text="©PocketNutritionist" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+      </AnchorPane>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="330.0" prefWidth="450.0" style="-fx-background-color: #9e9e9c;" BorderPane.alignment="CENTER">
+            <Button fx:id="RegisterButton" layoutX="336.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="125.0" layoutY="2.0" prefHeight="25.0" prefWidth="200.0" text="Nutritionist Registration" textFill="#4a4949">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameField" layoutX="140.0" layoutY="75.0" />
+            <Label layoutX="25.0" layoutY="80.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="140.0" layoutY="105.0" />
+            <Label layoutX="25.0" layoutY="110.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="FullName" layoutX="140.0" layoutY="135.0" />
+            <Label layoutX="25.0" layoutY="140.0" text="Full name" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="DateOfBirth" layoutX="140.0" layoutY="165.0" prefHeight="21.0" prefWidth="150.0" />
+            <Label layoutX="25.0" layoutY="170.0" text="date of birth" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PhoneNumber" layoutX="140.0" layoutY="195.0" />
+            <Label layoutX="25.0" layoutY="200.0" text="phone Number" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Email" layoutX="140.0" layoutY="225.0" />
+            <Label layoutX="25.0" layoutY="230.0" text="Email" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="260.0" text="document" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="140.0" layoutY="256.0" onAction="#selectImage" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Upload" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
+            <Text fx:id="registrationMessage" fill="WHITE" layoutX="22.0" layoutY="305.0" wrappingWidth="284.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+      </AnchorPane>
+   </right>
+   <left>
+      <AnchorPane prefHeight="330.0" prefWidth="150.0" style="-fx-background-color: #6f6f6f;" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="147.0" fitWidth="147.0" layoutX="2.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@PocketNutritionist-01.png" />
+            </ImageView>
+            <Button fx:id="back" layoutX="24.0" layoutY="189.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Choose role" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="LoginScreen" layoutX="24.0" layoutY="231.0" mnemonicParsing="false" onAction="#handleLoginScreenButton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="login screen" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
+      </AnchorPane>
+   </left>
+</BorderPane>
