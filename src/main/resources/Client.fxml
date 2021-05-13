@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pocket.controllers.ClientProfile">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pocket.controllers.ClientController">
    <bottom>
       <AnchorPane prefHeight="35.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -45,7 +45,7 @@
    <right>
       <AnchorPane prefHeight="330.0" prefWidth="200.0" style="-fx-background-color: #6f6f6f;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="AddFood" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleAddFoodAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Add Food" textFill="WHITE">
+            <Button fx:id="AddFood" layoutX="25.0" layoutY="100.0" mnemonicParsing="false"  onAction="#handleAddFoodAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Add Food" textFill="WHITE">
                <font>
                   <Font name="Showcard Gothic" size="12.0" />
                </font>
@@ -112,17 +112,17 @@
                   <Font name="Showcard Gothic" size="14.0" />
                </font>
             </Label>
-            <Text fx:id="TotalCalories" fill="#b6c632" layoutX="10.0" layoutY="225.0" textAlignment="RIGHT" wrappingWidth="159.0">
+            <Text fx:id="TotalCaloriesText" fill="#b6c632" layoutX="5.0" layoutY="225.0" textAlignment="RIGHT" wrappingWidth="159.0">
                <font>
                   <Font name="Showcard Gothic" size="32.0" />
                </font>
             </Text>
-            <Text fx:id="Caories" fill="#b6c632" layoutX="10.0" layoutY="300.0" textAlignment="RIGHT" wrappingWidth="159.0">
+            <Text fx:id="CaloriesText" fill="#b6c632" layoutX="5.0" layoutY="300.0" textAlignment="RIGHT" wrappingWidth="159.0">
                <font>
                   <Font name="Showcard Gothic" size="32.0" />
                </font>
             </Text>
-            <Text fx:id="CaloriesLeft" fill="#b6c632" layoutX="10.0" layoutY="380.0" textAlignment="RIGHT" wrappingWidth="159.0">
+            <Text fx:id="CaloriesLeftText" fill="#b6c632" layoutX="5.0" layoutY="380.0" textAlignment="RIGHT" wrappingWidth="159.0">
                <font>
                   <Font name="Showcard Gothic" size="32.0" />
                </font>

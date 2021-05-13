@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import com.pocket.services.UserService;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.List;
@@ -38,12 +39,31 @@ public class LoginController {
         String password = UserService.loginEncode(usernameField.getText(),passwordField.getText());
         List<User> users = UserService.loadUsersFromFile2();
         boolean userFound = false;
-        for(User it : users )
-        {
-            if(usernameField.getText().compareTo(it.getUsername())==0 && password.compareTo(it.getPassword())==0)
-            {
+        for(User it : users ) {
+            if (usernameField.getText().compareTo(it.getUsername()) == 0 && password.compareTo(it.getPassword()) == 0) {
                 userFound = true;
-                registrationMessage.setText("Login successful!");
+                if (it.getRole().compareTo("Client") == 0) {
+                    Stage stage;
+                    FXMLLoader root;
+                    try {
+
+                        stage = (Stage) Register.getScene().getWindow();
+                        //stage = new Stage(StageStyle.DECORATED);
+                        root = new FXMLLoader(getClass().getResource("/Client.fxml"));
+                        Scene scene = new Scene(root.load());
+                        stage.setScene(scene);
+                        ClientController controller = root.getController();
+                        controller.initialize(it);
+
+                        stage.show();
+                        //return stage;
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        e.getCause();
+                    }
+                }
+                //registrationMessage.setText("Login successful!");
                 //handleLoginButton();
                 break;
             }
