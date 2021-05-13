@@ -73,7 +73,7 @@ public class LoginController {
         }
 
     }
-
+    @FXML
     public void handleLoginButton()
     {
         Stage stage;
@@ -91,15 +91,13 @@ public class LoginController {
             e.getCause();
         }
     }
+    @FXML
     public void handleCloseAction(ActionEvent event)
     {
         Stage stage;
-        try{
+
         stage = (Stage) Close.getScene().getWindow();
         stage.close();
-        } catch(Exception o) {
-            o.printStackTrace();
-            o.getCause();
-        }
+
     }
 }

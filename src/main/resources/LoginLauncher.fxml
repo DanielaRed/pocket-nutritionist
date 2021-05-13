@@ -58,17 +58,17 @@
                </font>
             </Label>
             <PasswordField layoutX="129.0" layoutY="166.0" maxHeight="20.0" prefHeight="0.0" prefWidth="190.0" style="-fx-background-radius: 10;" />
-            <Button layoutX="50.0" layoutY="215.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Login" textFill="WHITE" onAction="#handleLoginButton">
+            <Button layoutX="50.0" layoutY="215.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Login" textFill="WHITE" onAction="#handleLoginButton" fx:id="Login">
                <font>
                   <Font name="Showcard Gothic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="50.0" layoutY="255.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Register" textFill="WHITE" onAction="#handleRegisterAction">
+            <Button layoutX="50.0" layoutY="255.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Register" textFill="WHITE" onAction="#handleRegisterAction" fx:id="Register">
                <font>
                   <Font name="Showcard Gothic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="50.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Close" textFill="WHITE" onAction="#handleCloseAction">
+            <Button layoutX="50.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Close" textFill="WHITE" onAction="#handleCloseAction" fx:id="Close">
                <font>
                   <Font name="Showcard Gothic" size="12.0" />
                </font>
