@@ -60,6 +60,11 @@
                   <Font name="Showcard Gothic" size="12.0" />
                </font>
             </Button>
+            <Button fx:id="CheckMacros" layoutX="25.0" layoutY="250.0" mnemonicParsing="false" onAction="#handleCheckMacrosAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Check Macros" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </right>
