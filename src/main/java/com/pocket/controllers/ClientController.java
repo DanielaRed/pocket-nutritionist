@@ -66,6 +66,10 @@ public class ClientController {
 
     }
 
+    public void handleCheckMacrosAction()
+    {
+
+    }
 
 
     @FXML
