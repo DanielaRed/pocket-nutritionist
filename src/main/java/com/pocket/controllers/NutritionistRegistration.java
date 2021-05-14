@@ -39,6 +39,8 @@ public class NutritionistRegistration {
     private TextField FullName;
     @FXML
     private Button back;
+    @FXML
+    private Button LoginScreen;
 
     private String Document;
 
@@ -109,6 +111,25 @@ public class NutritionistRegistration {
 
             stage = (Stage) back.getScene().getWindow();
             root = FXMLLoader.load(getClass().getClassLoader().getResource("SelectRole.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
+
+    public void handleLoginScreenButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) LoginScreen.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

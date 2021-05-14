@@ -4,14 +4,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import com.pocket.services.UserService;
+
 
 public class SelectRoleController {
     @FXML
@@ -49,7 +45,7 @@ public class SelectRoleController {
 
             //Stage primaryStage = new Stage();
             stage = (Stage) next.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("NutritionistRegistration.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("NutritionistRegistrationNew.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -65,7 +61,7 @@ public class SelectRoleController {
         try{
 
             stage = (Stage) back.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
