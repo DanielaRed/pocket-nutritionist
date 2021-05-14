@@ -13,7 +13,7 @@
     <ImageView fitHeight="153.0" fitWidth="172.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
         <image>
 
-            <Image url="@logo.png" />
+            <Image url="@zlogo.png" />
         </image>
     </ImageView>
 
