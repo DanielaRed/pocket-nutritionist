@@ -72,8 +72,7 @@ public class AddFood {
         {
             foods.add(it.getName());
         }
-        //food_items.getItems().addAll(foods.toArray(new String[0]));
-        //food_items.setValue("Bread");
+
         no_servings.setValue("1");
         food_items.getItems().addAll(FXCollections.observableArrayList(foods));
         no_servings.getItems().addAll(FXCollections.observableArrayList("1","2","3","4"));
@@ -86,9 +85,9 @@ public class AddFood {
                     No_Proteins = it.getProtein() * (Integer.parseInt(no_servings.getSelectionModel().getSelectedItem().toString()));
                     No_Calories = it.getCalories() * (Integer.parseInt(no_servings.getSelectionModel().getSelectedItem().toString()));
 
-                    Carbs.setText(No_Carbs + "");
-                    Fat.setText(No_Fats + "");
-                    Proteins.setText(No_Proteins + "");
+                    Carbs.setText(String.format("%.1f",No_Carbs));
+                    Fat.setText(String.format("%.1f",No_Fats));
+                    Proteins.setText(String.format("%.1f",No_Proteins));
                     Calories.setText(No_Calories + "");
 
                     break;
@@ -103,9 +102,9 @@ public class AddFood {
                         No_Proteins = it.getProtein() * (Integer.parseInt(no_servings.getSelectionModel().getSelectedItem().toString()));
                         No_Calories = it.getCalories() * (Integer.parseInt(no_servings.getSelectionModel().getSelectedItem().toString()));
 
-                        Carbs.setText(No_Carbs + "");
-                        Fat.setText(No_Fats + "");
-                        Proteins.setText(No_Proteins + "");
+                        Carbs.setText(String.format("%.1f",No_Carbs));
+                        Fat.setText(String.format("%.1f",No_Fats));
+                        Proteins.setText(String.format("%.1f",No_Proteins));
                         Calories.setText(No_Calories + "");
 
                         break;
@@ -133,23 +132,6 @@ public class AddFood {
     @FXML
     public void handleBackButton()
     {
-        /*
-        Stage stage;
-        Parent root;
-        try{
-
-            stage = (Stage) Back.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Client.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-         */
-
         Stage stage;
         FXMLLoader root;
         try {
@@ -162,7 +144,6 @@ public class AddFood {
             controller.initialize2(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
 
             stage.show();
-            //return stage;
 
         } catch (Exception e) {
             e.printStackTrace();

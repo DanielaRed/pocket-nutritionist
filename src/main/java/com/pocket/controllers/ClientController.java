@@ -63,7 +63,7 @@ public class ClientController {
         TotalCarbs = carbs;
         TotalProteins = proteins;
         Calories = user.getCalories() - calories;
-        CaloriesLeft = calories ;
+        CaloriesLeft = calories;
         setTexts();
     }
 
@@ -129,14 +129,17 @@ public class ClientController {
     @FXML
     public void handleCheckMacrosAction()
     {
+
         Stage stage;
-        Parent root;
+        FXMLLoader loader;
         try{
 
             stage = (Stage) CheckMacros.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Macronutrients.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            loader = new FXMLLoader(getClass().getResource("/Macronutrients.fxml"));
+            stage.setScene(new Scene(loader.load()));
+            Macronutrients controller = loader.getController();
+            controller.initialize(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
+
             stage.show();
 
         } catch(Exception e) {
