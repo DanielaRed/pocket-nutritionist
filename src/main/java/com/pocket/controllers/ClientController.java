@@ -28,9 +28,7 @@ public class ClientController {
     @FXML
     private Text CaloriesText;
     @FXML
-    private Button AddFood;
-    @FXML
-    private Button Back;
+    private Button CheckMacros;
 
     private int TotalCalories;
     private int Calories;
@@ -58,9 +56,23 @@ public class ClientController {
         Calories = Calories + calorie;
         CaloriesLeft = CaloriesLeft - calorie;
     }
-
+    @FXML
     public void handleAddFoodAction()
     {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) CheckMacros.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("AddFood.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
 
@@ -73,9 +85,23 @@ public class ClientController {
     {
 
     }
-
+    @FXML
     public void handleCheckMacrosAction()
     {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) CheckMacros.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Macronutrients.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
 
@@ -90,24 +116,7 @@ public class ClientController {
 
     }
 
-    public void handleBackButton()
-    {
-        Stage stage;
-        Parent root;
-        try{
 
-            stage = (Stage) Back.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("Client.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-
-    }
 
 
 
