@@ -110,13 +110,15 @@ public class ClientController {
     public void handleAccountAction()
     {
         Stage stage;
-        Parent root;
+        FXMLLoader loader;
         try{
 
-            stage = (Stage) Account.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("AccountDetails.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            stage = (Stage) AddFood.getScene().getWindow();
+            loader = new FXMLLoader(getClass().getResource("/AccountDetails.fxml"));
+            stage.setScene(new Scene(loader.load()));
+            AccountDetails controller = loader.getController();
+            controller.initialize(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
+
             stage.show();
 
         } catch(Exception e) {
@@ -138,7 +140,7 @@ public class ClientController {
             loader = new FXMLLoader(getClass().getResource("/Macronutrients.fxml"));
             stage.setScene(new Scene(loader.load()));
             Macronutrients controller = loader.getController();
-            controller.initialize(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
+            controller.initialize(user,TotalCalories,TotalCarbs,TotalFats,TotalProteins);
 
             stage.show();
 
