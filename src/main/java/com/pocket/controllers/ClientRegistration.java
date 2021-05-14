@@ -5,15 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import com.pocket.services.UserService;
 import javafx.stage.Stage;
-import javafx.scene.control.ChoiceBox;
 
 import java.time.LocalDate;
 
@@ -40,7 +36,7 @@ public class ClientRegistration {
     @FXML
     private TextField Weight;
     @FXML
-    private TextField Allergies;
+    private TextArea Allergies;
     @FXML
     private  ChoiceBox DietType;
     @FXML
