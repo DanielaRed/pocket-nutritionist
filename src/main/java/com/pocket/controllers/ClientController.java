@@ -43,6 +43,7 @@ public class ClientController {
         TotalCaloriesText.setText(String.valueOf(TotalCalories));
         CaloriesText.setText(String.valueOf(Calories));
         CaloriesLeftText.setText(String.valueOf(CaloriesLeft));
+        //
     }
 
     public void addCalorie(int calorie)
