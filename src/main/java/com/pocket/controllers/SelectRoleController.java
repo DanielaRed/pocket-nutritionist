@@ -1,5 +1,6 @@
 package com.pocket.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +18,10 @@ public class SelectRoleController {
     private Button next;
     @FXML
     private Button back;
+    @FXML
+    private Button LoginScreen;
+    @FXML
+    private Button Close;
 
 
     @FXML
@@ -70,6 +75,33 @@ public class SelectRoleController {
             e.printStackTrace();
             e.getCause();
         }
+
+    }
+    public void handleLoginScreenButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) LoginScreen.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
+    @FXML
+    public void handleCloseAction(ActionEvent event)
+    {
+        Stage stage;
+
+        stage = (Stage) Close.getScene().getWindow();
+        stage.close();
 
     }
 
