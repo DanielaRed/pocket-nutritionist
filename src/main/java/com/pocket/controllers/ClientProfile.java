@@ -36,7 +36,7 @@ public class ClientProfile {
             //UserService.loadUsersFromFile();
             //
             stage = (Stage) next.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("ClientRegistration.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("CReg.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
