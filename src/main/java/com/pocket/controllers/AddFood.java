@@ -28,11 +28,7 @@ public class AddFood {
 
 
 
-    @FXML
-    public void handleAddButton()
-    {
 
-    }
 
     @FXML
     public void handleBackButton()

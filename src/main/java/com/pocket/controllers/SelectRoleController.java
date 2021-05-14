@@ -16,8 +16,7 @@ public class SelectRoleController {
 
     @FXML
     private Button next;
-    @FXML
-    private Button back;
+
     @FXML
     private Button LoginScreen;
     @FXML
@@ -59,24 +58,6 @@ public class SelectRoleController {
 
     }
     @FXML
-    public void handleBackButton()
-    {
-        Stage stage;
-        Parent root;
-        try{
-
-            stage = (Stage) back.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-
-    }
     public void handleLoginScreenButton()
     {
         Stage stage;

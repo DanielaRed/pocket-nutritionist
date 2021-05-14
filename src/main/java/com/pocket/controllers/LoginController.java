@@ -93,24 +93,7 @@ public class LoginController {
         }
 
     }
-    @FXML
-    public void handleLoginButton()
-    {
-        Stage stage;
-        Parent root;
-        try{
 
-            stage = (Stage) Login.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("ClientProfile.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
-    }
     @FXML
     public void handleCloseAction(ActionEvent event)
     {
