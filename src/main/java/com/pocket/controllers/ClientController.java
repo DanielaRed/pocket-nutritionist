@@ -18,7 +18,7 @@ public class ClientController {
     @FXML
     private Button ChooseNutritionist;
     @FXML
-    private Button profile;
+    private Button Account;
     @FXML
     private Text ClientName;
     @FXML
@@ -63,7 +63,7 @@ public class ClientController {
         Parent root;
         try{
 
-            stage = (Stage) CheckMacros.getScene().getWindow();
+            stage = (Stage) AddFood.getScene().getWindow();
             root = FXMLLoader.load(getClass().getClassLoader().getResource("AddFood.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -80,9 +80,24 @@ public class ClientController {
     {
 
     }
-
-    public void handleProfileAction()
+    @FXML
+    public void handleAccountAction()
     {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) Account.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("AccountDetails.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
 
     }
     @FXML

@@ -36,7 +36,7 @@ public class ClientRegistration {
     @FXML
     private TextField Weight;
     @FXML
-    private TextArea Allergies;
+    private TextField Allergies;
     @FXML
     private  ChoiceBox DietType;
     @FXML
@@ -94,6 +94,7 @@ public class ClientRegistration {
         }
 
     }
+    @FXML
     public void handleLoginScreenButton()
     {
         Stage stage;
