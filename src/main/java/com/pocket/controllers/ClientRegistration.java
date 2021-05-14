@@ -45,6 +45,8 @@ public class ClientRegistration {
     private  ChoiceBox DietType;
     @FXML
     private Button back;
+    @FXML
+    private Button LoginScreen;
 
 
     @FXML
@@ -86,6 +88,24 @@ public class ClientRegistration {
 
             stage = (Stage) back.getScene().getWindow();
             root = FXMLLoader.load(getClass().getClassLoader().getResource("SelectRole.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
+    public void handleLoginScreenButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) LoginScreen.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
