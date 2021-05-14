@@ -13,7 +13,7 @@
     <ImageView fitHeight="225" fitWidth="225" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.rowSpan="1">
         <image>
 
-            <Image url="@logo.png" />
+            <Image url="@zlogo.png" />
         </image>
     </ImageView>
     <Text id="title-text" fill="#b6c633" text="Select your role" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.rowIndex="1">
