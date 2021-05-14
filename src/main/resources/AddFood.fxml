@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9e9e9c;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pocket.controllers.AddFood">
+   <top>
+      <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="600.0" nodeOrientation="INHERIT" pickOnBounds="true">
+               <image>
+                  <Image url="@zPocket-Nutri-Green.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="144.0" text="Pocket Nutritionist" textFill="#4a4949">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #6f6f6f;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="5.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@PocketNutritionist-01.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Close" layoutX="40.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleCloseAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="close" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="Back" layoutX="40.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="600.0" nodeOrientation="INHERIT" pickOnBounds="true">
+               <image>
+                  <Image url="@zPocket-Nutri-Green.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="9.0" text="©PocketNutritionist" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox layoutX="21.0" layoutY="118.0" prefWidth="200.0" />
+            <Label layoutX="108.0" layoutY="33.0" text="Select the food you ate:" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="95.0" text="Food Items" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox layoutX="242.0" layoutY="118.0" prefWidth="100.0" />
+            <Button fx:id="Add" layoutX="366.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="260.0" layoutY="95.0" text="Servings" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Text fx:id="Carbs" fill="#b6c632" layoutX="30.0" layoutY="220.0" textAlignment="RIGHT" wrappingWidth="159.0">
+               <font>
+                  <Font name="Showcard Gothic" size="24.0" />
+               </font>
+            </Text>
+            <Label layoutX="30.0" layoutY="175.0" text="Carbs" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Text fx:id="Fat" fill="#b6c632" layoutX="30.0" layoutY="285.0" textAlignment="RIGHT" wrappingWidth="159.0">
+               <font>
+                  <Font name="Showcard Gothic" size="24.0" />
+               </font>
+            </Text>
+            <Label layoutX="30.0" layoutY="235.0" text="fat" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Text fx:id="Proteins" fill="#b6c632" layoutX="230.0" layoutY="220.0" textAlignment="RIGHT" wrappingWidth="159.0">
+               <font>
+                  <Font name="Showcard Gothic" size="24.0" />
+               </font>
+            </Text>
+            <Label layoutX="230.0" layoutY="175.0" text="Proteins" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Text fx:id="Calories" fill="#b6c632" layoutX="230.0" layoutY="285.0" textAlignment="RIGHT" wrappingWidth="159.0">
+               <font>
+                  <Font name="Showcard Gothic" size="24.0" />
+               </font>
+            </Text>
+            <Label layoutX="230.0" layoutY="235.0" text="Calories" textFill="WHITE">
+               <font>
+                  <Font name="Showcard Gothic" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
