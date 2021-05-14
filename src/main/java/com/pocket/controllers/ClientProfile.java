@@ -34,7 +34,7 @@ public class ClientProfile {
 
         if((String) role.getValue() == "Client") {
             //UserService.loadUsersFromFile();
-
+            //
             stage = (Stage) next.getScene().getWindow();
             root = FXMLLoader.load(getClass().getClassLoader().getResource("ClientRegistration.fxml"));
             Scene scene = new Scene(root);
