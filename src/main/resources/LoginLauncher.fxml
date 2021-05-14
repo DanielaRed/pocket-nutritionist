@@ -28,7 +28,7 @@
          <children>
             <ImageView fitHeight="34.0" fitWidth="600.0" nodeOrientation="INHERIT" pickOnBounds="true">
                <image>
-                  <Image url="@Pocket-Nutri-Background-01.jpg" />
+                  <Image url="@zPocket-Nutri-Green.jpg" />
                </image>
             </ImageView>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="8.0" text="©PocketNutritionist" textFill="WHITE">
@@ -77,7 +77,7 @@
             </Button>
             <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="262.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@login.png" />
+                  <Image url="@zlogin.png" />
                </image>
             </ImageView>
          </children>
