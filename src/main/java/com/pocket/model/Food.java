@@ -19,6 +19,46 @@ public class Food {
         this.calories = calories;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name=name;
+    }
+
+    public String getServing()
+    {
+        return name;
+    }
+
+    public void setServing(String serving)
+    {
+        this.serving=serving;
+    }
+
+    public double getFat()
+    {
+        return fat;
+    }
+
+    public double getCarbs()
+    {
+        return carbs;
+    }
+
+    public double getProtein()
+    {
+        return protein;
+    }
+
+    public int getCalories()
+    {
+        return calories;
+    }
+
 
 
 }

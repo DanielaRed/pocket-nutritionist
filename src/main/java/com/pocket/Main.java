@@ -1,5 +1,6 @@
 package com.pocket;
 
+import com.pocket.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

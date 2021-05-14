@@ -67,7 +67,7 @@
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="450.0" BorderPane.alignment="CENTER">
          <children>
-            <ChoiceBox layoutX="21.0" layoutY="118.0" prefWidth="200.0" />
+            <ChoiceBox fx:id="food_items" layoutX="21.0" layoutY="118.0" prefWidth="200.0" />
             <Label layoutX="108.0" layoutY="33.0" text="Select the food you ate:" textFill="WHITE">
                <font>
                   <Font name="Showcard Gothic" size="18.0" />
@@ -78,8 +78,8 @@
                   <Font name="Showcard Gothic" size="14.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="242.0" layoutY="118.0" prefWidth="100.0" />
-            <Button fx:id="Add" layoutX="366.0" layoutY="116.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+            <ChoiceBox fx:id="no_servings" layoutX="242.0" layoutY="118.0" prefWidth="100.0" />
+            <Button fx:id="Add" layoutX="366.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="Add" textFill="WHITE">
                <font>
                   <Font name="Showcard Gothic" size="12.0" />
                </font>

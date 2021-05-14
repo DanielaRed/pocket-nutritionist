@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class ClientController {
     @FXML
@@ -33,19 +34,42 @@ public class ClientController {
     private int TotalCalories;
     private int Calories;
     private int CaloriesLeft;
+    private double TotalCarbs;
+    private double TotalFats;
+    private double TotalProteins;
+
+    private User user;
+
 
     public void initialize(User user)
     {
+        this.user = user;
         ClientName.setText(user.getFullName());
         TotalCalories = user.getCalories();
         Calories = 0;
         CaloriesLeft = user.getCalories();
+        TotalCarbs = 0;
+        TotalFats = 0;
+        TotalProteins = 0;
+        setTexts();
+    }
+
+    public void initialize2(User user, int calories, double fats, double carbs, double proteins)
+    {
+        this.user = user;
+        ClientName.setText(user.getFullName());
+        TotalCalories = calories;
+        TotalFats = fats;
+        TotalCarbs = carbs;
+        TotalProteins = proteins;
+        Calories = user.getCalories() - calories;
+        CaloriesLeft = calories ;
         setTexts();
     }
 
     private void setTexts()
     {
-        TotalCaloriesText.setText(String.valueOf(TotalCalories));
+        TotalCaloriesText.setText(String.valueOf(user.getCalories()));
         CaloriesText.setText(String.valueOf(Calories));
         CaloriesLeftText.setText(String.valueOf(CaloriesLeft));
         //
@@ -60,13 +84,15 @@ public class ClientController {
     public void handleAddFoodAction()
     {
         Stage stage;
-        Parent root;
+        FXMLLoader loader;
         try{
 
             stage = (Stage) AddFood.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("AddFood.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            loader = new FXMLLoader(getClass().getResource("/AddFood.fxml"));
+            stage.setScene(new Scene(loader.load()));
+            AddFood controller = loader.getController();
+            controller.loadInfo(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
+
             stage.show();
 
         } catch(Exception e) {
