@@ -63,7 +63,7 @@
             </Label>
             <Text fx:id="FullName" fill="#b6c632" layoutX="20.0" layoutY="115.0" wrappingWidth="191.0">
                <font>
-                  <Font name="Showcard Gothic" size="24.0" />
+                  <Font name="Showcard Gothic" size="16.0" />
                </font>
             </Text>
             <Label layoutX="260.0" layoutY="70.0" text="Date of Birth:" textFill="WHITE">
@@ -103,7 +103,7 @@
             </Label>
             <Text fx:id="Gender" fill="#b6c632" layoutX="300.0" layoutY="190.0" wrappingWidth="75.0">
                <font>
-                  <Font name="Showcard Gothic" size="24.0" />
+                  <Font name="Showcard Gothic" size="18.0" />
                </font>
             </Text>
             <Label layoutX="100.0" layoutY="175.0" text="cm" textFill="WHITE">
@@ -121,9 +121,9 @@
                   <Font name="Showcard Gothic" size="16.0" />
                </font>
             </Label>
-            <Text fx:id="Email" fill="#b6c632" layoutX="20.0" layoutY="260.0" textAlignment="RIGHT" wrappingWidth="200.0">
+            <Text fx:id="Email" fill="#b6c632" layoutX="20.0" layoutY="260.0" textAlignment="LEFT" wrappingWidth="200.0">
                <font>
-                  <Font name="Showcard Gothic" size="24.0" />
+                  <Font name="Showcard Gothic" size="14.0" />
                </font>
             </Text>
             <Label layoutX="300.0" layoutY="215.0" text="Diet Type:" textFill="WHITE">
@@ -131,9 +131,9 @@
                   <Font name="Showcard Gothic" size="16.0" />
                </font>
             </Label>
-            <Text fx:id="DietType" fill="#b6c632" layoutX="300.0" layoutY="260.0" wrappingWidth="100.0">
+            <Text fx:id="DietType" fill="#b6c632" layoutX="300.0" layoutY="260.0" wrappingWidth="110.0">
                <font>
-                  <Font name="Showcard Gothic" size="24.0" />
+                  <Font name="Showcard Gothic" size="16.0" />
                </font>
             </Text>
             <Label layoutX="20.0" layoutY="275.0" text="Allergies:" textFill="WHITE">
@@ -143,7 +143,7 @@
             </Label>
             <Text fx:id="Allergies" fill="#b6c632" layoutX="20.0" layoutY="315.0" wrappingWidth="250.0">
                <font>
-                  <Font name="Showcard Gothic" size="24.0" />
+                  <Font name="Showcard Gothic" size="16.0" />
                </font>
             </Text>
             <Label layoutX="300.0" layoutY="275.0" text="Phone Number:" textFill="WHITE">

@@ -32,6 +32,8 @@ public class ClientController {
     private Text CaloriesText;
     @FXML
     private Button CheckMacros;
+    @FXML
+    private Button LoginScreen;
 
     private int TotalCalories;
     private int Calories;
@@ -118,7 +120,7 @@ public class ClientController {
         FXMLLoader loader;
         try{
 
-            stage = (Stage) AddFood.getScene().getWindow();
+            stage = (Stage) Account.getScene().getWindow();
             loader = new FXMLLoader(getClass().getResource("/AccountDetails.fxml"));
             stage.setScene(new Scene(loader.load()));
             AccountDetails controller = loader.getController();
@@ -164,6 +166,25 @@ public class ClientController {
 
         stage = (Stage) Close.getScene().getWindow();
         stage.close();
+
+    }
+    @FXML
+    public void handleLoginScreenButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) LoginScreen.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
 
