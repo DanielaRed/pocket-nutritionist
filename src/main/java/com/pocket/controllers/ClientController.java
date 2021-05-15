@@ -30,6 +30,8 @@ public class ClientController {
     private Text CaloriesText;
     @FXML
     private Button CheckMacros;
+    @FXML
+    private Button LoginScreen;
 
     private int TotalCalories;
     private int Calories;
@@ -110,13 +112,15 @@ public class ClientController {
     public void handleAccountAction()
     {
         Stage stage;
-        Parent root;
+        FXMLLoader loader;
         try{
 
             stage = (Stage) Account.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("AccountDetails.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            loader = new FXMLLoader(getClass().getResource("/AccountDetails.fxml"));
+            stage.setScene(new Scene(loader.load()));
+            AccountDetails controller = loader.getController();
+            controller.initialize(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
+
             stage.show();
 
         } catch(Exception e) {
@@ -138,7 +142,7 @@ public class ClientController {
             loader = new FXMLLoader(getClass().getResource("/Macronutrients.fxml"));
             stage.setScene(new Scene(loader.load()));
             Macronutrients controller = loader.getController();
-            controller.initialize(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
+            controller.initialize(user,TotalCalories,TotalCarbs,TotalFats,TotalProteins);
 
             stage.show();
 
@@ -157,6 +161,25 @@ public class ClientController {
 
         stage = (Stage) Close.getScene().getWindow();
         stage.close();
+
+    }
+    @FXML
+    public void handleLoginScreenButton()
+    {
+        Stage stage;
+        Parent root;
+        try{
+
+            stage = (Stage) LoginScreen.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginLauncher.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
 
