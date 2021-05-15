@@ -11,6 +11,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.Calendar;
+
 public class ClientController {
     @FXML
     private Button Close;
@@ -37,6 +39,8 @@ public class ClientController {
     private double TotalCarbs;
     private double TotalFats;
     private double TotalProteins;
+    private int Day;
+
 
     private User user;
 
@@ -44,6 +48,7 @@ public class ClientController {
     public void initialize(User user)
     {
         this.user = user;
+        Day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         ClientName.setText(user.getFullName());
         TotalCalories = user.getCalories();
         Calories = 0;
