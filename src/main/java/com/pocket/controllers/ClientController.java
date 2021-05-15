@@ -185,10 +185,6 @@ public class ClientController {
 
     }
 
-    public void handleLoginAction()
-    {
-
-    }
     @FXML
     public void handleAccountAction()
     {
