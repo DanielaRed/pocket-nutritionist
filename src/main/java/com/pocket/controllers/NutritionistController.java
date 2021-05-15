@@ -3,6 +3,7 @@ import java.util.ResourceBundle;
 import com.pocket.model.User;
 import com.pocket.services.UserService;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.io.IOException;
 import java.util.List;
@@ -62,6 +64,8 @@ public class NutritionistController {
     private User user;
     Stage window;
 
+
+
     public void initialize(User user)
     {
         this.user = user;
@@ -76,6 +80,55 @@ public class NutritionistController {
         label.setFont(font);
 
         List<User> users = UserService.loadUsersFromFile2();
+
+        TableView<User> table = new TableView<User>();
+        table.setEditable(true);
+        //Creating columns
+        TableColumn <User, String> clientName = new TableColumn("Client");
+        clientName.setCellValueFactory(new PropertyValueFactory<>("FullName"));
+
+        TableColumn <User, String> clientPhoneNumber = new TableColumn("Phone Number");
+        clientPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("PhoneNumber"));
+
+        TableColumn <User, String> clientEmail = new TableColumn("Email");
+        clientEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
+
+        TableColumn <User, String> clientDiet = new TableColumn("Diet Type");
+        clientDiet.setCellValueFactory(new PropertyValueFactory<>("DietType"));
+
+        TableColumn <User, String> clientGender = new TableColumn("Gender");
+        clientGender.setCellValueFactory(new PropertyValueFactory<>("Gender"));
+
+       TableColumn <User, String> clientHeight = new TableColumn("Height");
+        clientHeight.setCellValueFactory(new PropertyValueFactory<>("Height"));
+
+        TableColumn <User, String> clientWeight = new TableColumn("Weight");
+        clientWeight.setCellValueFactory(new PropertyValueFactory<>("Weight"));
+
+        TableColumn <User, String> clientAllergies = new TableColumn("Allergies");
+        clientAllergies.setCellValueFactory(new PropertyValueFactory<>("Allergies"));
+
+         TableColumn <User, Integer> clientCalories = new TableColumn("Calories Allowed");
+        clientCalories.setCellValueFactory(new PropertyValueFactory<>("calories"));
+        clientCalories.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        clientCalories.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<User, Integer>>() {
+            @Override
+            public void handle(TableColumn.CellEditEvent<User, Integer> event) {
+                User changes = event.getRowValue();
+                changes.setCalories(event.getNewValue());
+                UserService.persistUsers2(users);
+
+            }
+        });
+
+
+
+
+
+
+
+        table.getColumns().addAll(clientName,clientPhoneNumber,clientEmail,clientDiet,clientGender,clientHeight,clientWeight,clientAllergies,clientCalories);
+
         ObservableList<User> data = FXCollections.observableArrayList();
         for (User it : users)
         {
@@ -84,69 +137,53 @@ public class NutritionistController {
                 data.add(it);
             }
         }
-        //Creating columns
-        //TableColumn <User, String> clientName = new TableColumn("Client");
-        clientName.setCellValueFactory(new PropertyValueFactory<>("FullName"));
-        // clientName.setMinWidth(200);
-        //TableColumn <User, String> clientPhoneNumber = new TableColumn("Phone Number");
-        clientPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("PhoneNumber"));
-        // clientPhoneNumber.setMinWidth(50);
-        //TableColumn <User, String> clientEmail = new TableColumn("Email");
-        clientEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        // clientEmail.setMinWidth(150);
-        //TableColumn <User, String> clientDiet = new TableColumn("Diet Type");
-        clientDiet.setCellValueFactory(new PropertyValueFactory<>("DietType"));
-        //clientDiet.setMinWidth(100);
-        // TableColumn <User, String> clientGender = new TableColumn("Gender");
-        clientGender.setCellValueFactory(new PropertyValueFactory<>("Gender"));
-        //clientGender.setMinWidth(100);
-        //TableColumn <User, String> clientHeight = new TableColumn("Height");
-        clientHeight.setCellValueFactory(new PropertyValueFactory<>("Height"));
-        // clientHeight.setMinWidth(20);
-        //TableColumn <User, String> clientWeight = new TableColumn("Weight");
-        clientWeight.setCellValueFactory(new PropertyValueFactory<>("Weight"));
-        // clientWeight.setMinWidth(20);
-        //TableColumn <User, String> clientAllergies = new TableColumn("Allergies");
-        clientAllergies.setCellValueFactory(new PropertyValueFactory<>("Allergies"));
-        //clientAllergies.setMinWidth(20);
-        // TableColumn <User, Integer> clientCalories = new TableColumn("Calories Allowed");
-        clientCalories.setCellValueFactory(new PropertyValueFactory<>("calories"));
-        //clientCalories.setMinWidth(30);
-        //TableColumn <User, Button> clientEdit = new TableColumn("Edit Calories");
-        clientEdit.setCellValueFactory(new PropertyValueFactory<>("Edit"));
-        //clientEdit.setMinWidth(30);
 
-
-        TableView<User> table = new TableView<User>();
         table.setItems(data);
-        table.getColumns().addAll(clientName,clientPhoneNumber,clientEmail,clientDiet,clientGender,clientHeight,clientWeight,clientAllergies,clientCalories,clientEdit);
 
         window=new Stage();
-
         VBox vbox= new VBox();
         vbox.getChildren().addAll(table);
         Scene scene=new Scene(vbox);
         window.setTitle("Clients");
-        window.setScene(scene);
-        window.show();
-        EditCalories();
+       window.setScene(scene);
+       window.show();
+
 
     }
     @FXML
     public void handleClientsButton() throws IOException{
-        Stage  stage = (Stage) ViewClients.getScene().getWindow();
-        handleClientsAction();
+       // Stage  stage = (Stage) ViewClients.getScene().getWindow();
+        Stage stage;
+
+
+
+        FXMLLoader loader;
+        try{
+            handleClientsAction();
+            stage = (Stage) ViewClients.getScene().getWindow();
+
+            //loader = new FXMLLoader(getClass().getResource("/Table.fxml"));
+
+            //stage.setScene(new Scene(loader.load()));
+            //NutritionistController controller = loader.getController();
+
+
+            stage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
 
 
     }
 
-    public void EditCalories(){
-        //clientCalories.setCellFactory(TextFieldTableCell.forTableColumn());
-        clientCalories.setOnEditCommit(e -> {
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setCalories(e.getNewValue());
-        });
-        table.setEditable(true);
-    }
+   // public void EditCalories(){
+        //ageColumn.setCellFactory(TextFieldTableCell.<DataModel, Integer>forTableColumn(new IntegerStringConverter()));
+
+
+
+    //}
 
 
     @FXML

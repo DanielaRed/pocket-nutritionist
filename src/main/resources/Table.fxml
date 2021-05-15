@@ -74,13 +74,13 @@
                 <TableColumn fx:id="clientName" prefWidth="200" text="Full Name" />
                 <TableColumn fx:id="clientPhoneNumber" prefWidth="50" text="Phone Number" />
                 <TableColumn fx:id="clientEmail" prefWidth="200" text="Email" />
-                <TableColumn fx:id="clientDiet" prefWidth="50" text="Diet type" />
-                <TableColumn fx:id="clientGender" prefWidth="50" text="Gender" />
-                <TableColumn fx:id="clientHeight" prefWidth="20" text="Height" />
-                <TableColumn fx:id="clientWeight" prefWidth="20" text="Weight" />
+                <TableColumn fx:id="clientDiet" prefWidth="100" text="Diet type" />
+                <TableColumn fx:id="clientGender" prefWidth="100" text="Gender" />
+                <TableColumn fx:id="clientHeight" prefWidth="100" text="Height" />
+                <TableColumn fx:id="clientWeight" prefWidth="100" text="Weight" />
                 <TableColumn fx:id="clientAllergies" prefWidth="200" text="Allergies" />
-                <TableColumn fx:id="clientCalories" prefWidth="30" text="Allowed Calories" />
-                <TableColumn fx:id="clientEdit" prefWidth="50" text="Edit Calories" />
+                <TableColumn fx:id="clientCalories" prefWidth="100" text="Allowed Calories" />
+                <TableColumn fx:id="clientEdit" prefWidth="100" text="Edit Calories" />
             </columns>
         </TableView>
     </center>

@@ -190,6 +190,14 @@ public class UserService {
             throw new CouldNotWriteUsersException();
         }
     }
+    public static void persistUsers2(List<User> changes) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), changes);
+        } catch (IOException e) {
+            throw new CouldNotWriteUsersException();
+        }
+    }
 
     public static String loginEncode(String salt, String password)
     {
