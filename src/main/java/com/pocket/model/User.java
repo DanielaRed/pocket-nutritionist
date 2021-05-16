@@ -1,12 +1,9 @@
 package com.pocket.model;
 
-import javafx.scene.control.Button;
-
 import java.time.LocalDate;
 import java.time.Year;
 
 public class User {
-    Button Edit;
 
     private String username;
     private String password;
@@ -33,43 +30,7 @@ public class User {
 
 
 
-    public User(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email,
-                        String FullName, String Gender, String Allergies, String Height, String Weight,  String DietType, Boolean verified, Button Edit) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-
-        this.phoneNumber = PhoneNumber;
-        this.email = Email;
-        this.verified = verified;
-
-        this.gender = Gender;
-        this.full_name = FullName;
-        this.height = Height;
-        this.weight = Weight;
-        this.allergies = Allergies;
-        this.diet_type = DietType;
-        this.Edit = Edit;
-
-        this.year = DateOfBirth.getYear();
-        this.month = DateOfBirth.getMonthValue();
-        this.day = DateOfBirth.getDayOfMonth();
-        //System.out.println(this.username+ " " + this.password + " " + this.role + " " + day + " " + month + " " + year + " " + " " + phoneNumber + " " + email + " " + this.verified);
-
-        if(this.gender.compareTo("Female")==0)
-        {
-            this.calories = (int)((447.6 + 9.25 * Integer.parseInt(this.weight)) + (3.1 * Integer.parseInt(this.height)) - (4.33d * (Year.now().getValue() - this.year)));
-        }
-
-        if(this.gender.compareTo("Male")==0)
-        {
-            this.calories = (int)((88.4 + 13.4 * Integer.parseInt(this.weight)) + (4.8 * Integer.parseInt(this.height)) - (5.68 * (Year.now().getValue() - this.year)));
-        }
-
-        if(this.diet_type.compareTo("Muscle-Gain")==0)
-        {
-            this.calories = (int)(this.calories * 1.55);
-        }
+    public User() {
     }
 
     public User(String username, String password, String role, LocalDate DateOfBirth, String PhoneNumber, String Email,
@@ -264,14 +225,6 @@ public class User {
 
     public void setVerifiedStatus(Boolean verified) {
         this.verified = verified;
-    }
-
-    public Button getEdit() {
-        return Edit;
-    }
-
-    public void setEdit(Button edit) {
-        Edit = edit;
     }
 
     @Override

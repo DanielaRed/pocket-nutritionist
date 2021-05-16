@@ -44,10 +44,7 @@ public class AddFood {
             new Food("Cheese", "1 slice", 4, 7, 6, 100),
             new Food("Chicken Breast", "100g",2.1,1,22,105),
             new Food("Banana", "Medium", 27,0.4,1.3,105),
-            new Food("Milk","100 ml",12,0,8,80),
-            new Food("Black Coffee","100 ml",0,0,0,20),
-            new Food("Pork","100 g",0.1,34.6,14.2,386),
-            new Food("Roasted Duck","100 g",0,60.5,17.7,636)
+            new Food("Milk","100 ml",12,0,8,80)
     };
 
     private double No_Carbs;

@@ -42,7 +42,7 @@ public class LoginController {
         for(User it : users ) {
             if (usernameField.getText().compareTo(it.getUsername()) == 0 && password.compareTo(it.getPassword()) == 0) {
                 userFound = true;
-                if (it.getRole().compareTo("Client") == 0) {
+                if (it.getRole().compareTo("Client") == 0 && it.getVerifiedStatus().compareTo(true)==0) {
                     Stage stage;
                     FXMLLoader root;
                     try {
@@ -63,7 +63,7 @@ public class LoginController {
                         e.getCause();
                     }
                 }
-                if (it.getRole().compareTo("Nutritionist") == 0) {
+                if (it.getRole().compareTo("Nutritionist") == 0 && it.getVerifiedStatus().compareTo(true)==0) {
                     Stage stage;
                     FXMLLoader root;
                     try {
@@ -74,6 +74,27 @@ public class LoginController {
                         Scene scene = new Scene(root.load());
                         stage.setScene(scene);
                         NutritionistController controller = root.getController();
+                        controller.initialize(it);
+
+                        stage.show();
+                        //return stage;
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        e.getCause();
+                    }
+                }
+                if (it.getRole().compareTo("Admin") == 0) {
+                    Stage stage;
+                    FXMLLoader root;
+                    try {
+
+                        stage = (Stage) Login.getScene().getWindow();
+                        //stage = new Stage(StageStyle.DECORATED);
+                        root = new FXMLLoader(getClass().getResource("/Admin.fxml"));
+                        Scene scene = new Scene(root.load());
+                        stage.setScene(scene);
+                        AdminController controller = root.getController();
                         controller.initialize(it);
 
                         stage.show();
