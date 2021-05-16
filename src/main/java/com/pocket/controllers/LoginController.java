@@ -47,12 +47,33 @@ public class LoginController {
                     FXMLLoader root;
                     try {
 
-                        stage = (Stage) Register.getScene().getWindow();
+                        stage = (Stage) Login.getScene().getWindow();
                         //stage = new Stage(StageStyle.DECORATED);
                         root = new FXMLLoader(getClass().getResource("/Client.fxml"));
                         Scene scene = new Scene(root.load());
                         stage.setScene(scene);
                         ClientController controller = root.getController();
+                        controller.initialize(it);
+
+                        stage.show();
+                        //return stage;
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        e.getCause();
+                    }
+                }
+                if (it.getRole().compareTo("Nutritionist") == 0) {
+                    Stage stage;
+                    FXMLLoader root;
+                    try {
+
+                        stage = (Stage) Login.getScene().getWindow();
+                        //stage = new Stage(StageStyle.DECORATED);
+                        root = new FXMLLoader(getClass().getResource("/Nutritionist.fxml"));
+                        Scene scene = new Scene(root.load());
+                        stage.setScene(scene);
+                        NutritionistController controller = root.getController();
                         controller.initialize(it);
 
                         stage.show();
