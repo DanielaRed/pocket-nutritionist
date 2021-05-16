@@ -63,26 +63,30 @@ public class LoginController {
                         e.getCause();
                     }
                 }
-                if (it.getRole().compareTo("Nutritionist") == 0 && it.getVerifiedStatus().compareTo(true)==0) {
+                if (it.getRole().compareTo("Nutritionist") == 0 ) {
                     Stage stage;
                     FXMLLoader root;
-                    try {
+                    if (it.getVerifiedStatus().compareTo(true) == 0) {
+                        try {
 
-                        stage = (Stage) Login.getScene().getWindow();
-                        //stage = new Stage(StageStyle.DECORATED);
-                        root = new FXMLLoader(getClass().getResource("/Nutritionist.fxml"));
-                        Scene scene = new Scene(root.load());
-                        stage.setScene(scene);
-                        NutritionistController controller = root.getController();
-                        controller.initialize(it);
+                            stage = (Stage) Login.getScene().getWindow();
+                            //stage = new Stage(StageStyle.DECORATED);
+                            root = new FXMLLoader(getClass().getResource("/Nutritionist.fxml"));
+                            Scene scene = new Scene(root.load());
+                            stage.setScene(scene);
+                            NutritionistController controller = root.getController();
+                            controller.initialize(it);
 
-                        stage.show();
-                        //return stage;
+                            stage.show();
+                            //return stage;
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        e.getCause();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            e.getCause();
+                        }
                     }
+                    else
+                        registrationMessage.setText("Your account is not verified yet!");
                 }
                 if (it.getRole().compareTo("Admin") == 0) {
                     Stage stage;
@@ -114,6 +118,7 @@ public class LoginController {
         {
             registrationMessage.setText("Username or password incorrect!");
         }
+
     }
 
     @FXML
