@@ -141,7 +141,7 @@ public class AddFood {
             Scene scene = new Scene(root.load());
             stage.setScene(scene);
             ClientController controller = root.getController();
-            controller.initialize2(user,TotalCalories,TotalFats,TotalCarbs,TotalProteins);
+            controller.initialize2(user, TotalCalories,TotalFats,TotalCarbs,TotalProteins);
 
             stage.show();
 
@@ -154,7 +154,7 @@ public class AddFood {
     @FXML
     public void handleAddButton(ActionEvent event)
     {
-        TotalCalories = TotalCalories - No_Calories;
+        TotalCalories = TotalCalories + No_Calories;
         TotalFats = TotalFats + No_Fats;
         TotalCarbs = TotalCarbs + No_Carbs;
         TotalProteins = TotalProteins + No_Proteins;
