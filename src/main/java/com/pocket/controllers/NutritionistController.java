@@ -122,11 +122,6 @@ public class NutritionistController {
         });
 
 
-
-
-
-
-
         table.getColumns().addAll(clientName,clientPhoneNumber,clientEmail,clientDiet,clientGender,clientHeight,clientWeight,clientAllergies,clientCalories);
 
         ObservableList<User> data = FXCollections.observableArrayList();
@@ -152,22 +147,10 @@ public class NutritionistController {
     }
     @FXML
     public void handleClientsButton() throws IOException{
-       // Stage  stage = (Stage) ViewClients.getScene().getWindow();
         Stage stage;
-
-
-
-        FXMLLoader loader;
         try{
             handleClientsAction();
             stage = (Stage) ViewClients.getScene().getWindow();
-
-            //loader = new FXMLLoader(getClass().getResource("/Table.fxml"));
-
-            //stage.setScene(new Scene(loader.load()));
-            //NutritionistController controller = loader.getController();
-
-
             stage.show();
 
         } catch(Exception e) {
@@ -177,14 +160,6 @@ public class NutritionistController {
 
 
     }
-
-   // public void EditCalories(){
-        //ageColumn.setCellFactory(TextFieldTableCell.<DataModel, Integer>forTableColumn(new IntegerStringConverter()));
-
-
-
-    //}
-
 
     @FXML
     public void handleCloseAction(ActionEvent event)
