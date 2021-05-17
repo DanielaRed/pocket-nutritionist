@@ -38,6 +38,8 @@ public class AdminController {
     @FXML
     private Text ClientName;
     @FXML
+    private Text username;
+    @FXML
     private Button ViewClients;
     @FXML
     private TableColumn<User, Button> clientEdit;
@@ -61,7 +63,8 @@ public class AdminController {
     public void initialize(User user)
     {
         this.user = user;
-        ClientName.setText(user.getFullName());
+        //ClientName.setText(user.getFullName());
+        //username.setText(user.getUsername());
     }
 
 

@@ -71,11 +71,11 @@
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #9e9e9c;" BorderPane.alignment="CENTER">
             <children>
-                <Text fx:id="ClientName" fill="#b6c632" layoutX="10.0" layoutY="70.0" wrappingWidth="159.0">
+                <Label  layoutX="10.0" layoutY="70.0" text="admin" textFill="#b6c632">
                     <font>
                         <Font name="Showcard Gothic" size="16.0" />
                     </font>
-                </Text>
+                </Label>
 
                 <Label layoutX="10.0" layoutY="25.0" text="Welcome back," textFill="WHITE">
                     <font>
@@ -83,7 +83,7 @@
                     </font>
                 </Label>
 
-                <Button fx:id="ViewClients" layoutX="180.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleClientsButton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="view accounts" textFill="WHITE">
+                <Button fx:id="ViewClients" layoutX="20.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleClientsButton" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: b6c632; -fx-background-radius: 10;" text="view accounts" textFill="WHITE">
                     <font>
                         <Font name="Showcard Gothic" size="12.0" />
                     </font>
